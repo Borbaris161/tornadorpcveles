@@ -1,11 +1,13 @@
-#!/usr/bin/env/python
+# -*- coding: utf-8
 
+import os
 import setuptools
 
-with open("README.md") as readme:
-    long_description = readme.read()
-    with open("README", "w") as pypi_readme:
-        pypi_readme.write(long_description)
+long_description = "Placeholder in case of missing README.md."
+
+if os.path.exists("README.md"):
+    with open("README.md") as readme_fp:
+        long_description = readme_fp.read()
 
 setuptools.setup(
     name="tornadorpcveles",
