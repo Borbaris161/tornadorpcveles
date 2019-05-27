@@ -9,8 +9,8 @@ import tornado.websocket
 import tornado.httpserver
 import tornado.ioloop
 
-import jsonrpclibveles.payload
-from jsonrpclibveles.server.utils import getcallargs
+import jsonprclibveles.history
+from tornadorpcveles.utils import getcallargs
 
 TYPES = (list, tuple)
 
@@ -168,7 +168,7 @@ class BaseRPCWebSocketHandler(tornado.websocket.WebSocketHandler):
     _results = None
     _requests = 0
     _RPC_finished = False
-    _history = jsonrpclibveles.payload.History()
+    _history = jsonprclibveles.history.History()
 
     def set_default_headers(self, *args, **kwargs):
         self.set_header("Access-Control-Allow-Origin", "*")

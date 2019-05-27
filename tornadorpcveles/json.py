@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8
 
-from jsonrpclibveles.server.base import BaseRPCParser, BaseRPCRequestHandler, BaseRPCWebSocketHandler
-from jsonrpclibveles.payload.jsonrpc import Fault, isbatch, dumps, loads
+from tornadorpcveles.base import BaseRPCParser, BaseRPCRequestHandler, BaseRPCWebSocketHandler
+from jsonprclibveles.jsonrpc import Fault, isbatch, dumps, loads
 
 
 class JSONRPCParser(BaseRPCParser):
@@ -54,10 +54,8 @@ class JSONRPCLibraryWrapper(object):
 
 
 class JSONRPCHandler(BaseRPCRequestHandler):
-
     _RPC_ = JSONRPCParser(JSONRPCLibraryWrapper)
 
 
 class JSONRPCWSHandler(BaseRPCWebSocketHandler):
-
     _RPC_ = JSONRPCParser(JSONRPCLibraryWrapper)
